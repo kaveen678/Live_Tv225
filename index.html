@@ -38,7 +38,6 @@
             transition: background 0.4s ease;
         }
 
-        /* ද්විත්ව "Starting" ලේබලය නිවැරදි කිරීම */
         .vjs-loading-spinner {
             border: none !important;
             border-radius: 0 !important;
@@ -69,7 +68,7 @@
         }
 
         .vjs-loading-spinner::after {
-            display: none !important; /* දෙවන වරට පෙනෙන අකුරු ඉවත් කරන ලදි */
+            display: none !important;
         }
 
         @keyframes vjs-spinner-fade {
@@ -157,6 +156,8 @@
             transition: 0.3s; border: 1px solid var(--border-color);
             font-size: 11px; font-weight: 500; color: var(--text-color);
             display: flex; align-items: center; justify-content: center; min-height: 45px;
+            /* මෙතනින් සෑම වචනයකම පලමු අකුර කැපිටල් කර ඇත */
+            text-transform: capitalize; 
         }
 
         .channel-card:hover, .channel-card.active {
