@@ -34,8 +34,48 @@
             font-family: 'Poppins', sans-serif;
             margin: 0; padding: 0; 
             width: 100vw; height: 100vh;
-            overflow-x: hidden; /* Screen එකෙන් පිටතට යෑම වැලැක්වීමට */
+            overflow-x: hidden;
             transition: background 0.4s ease;
+        }
+
+        /* ද්විත්ව "Starting" ලේබලය නිවැරදි කිරීම */
+        .vjs-loading-spinner {
+            border: none !important;
+            border-radius: 0 !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            width: auto !important;
+            height: auto !important;
+            margin: 0 !important;
+            top: 50% !important;
+            left: 50% !important;
+            transform: translate(-50%, -50%) !important;
+            animation: none !important;
+        }
+
+        .vjs-loading-spinner::before {
+            content: "Starting..." !important;
+            animation: vjs-spinner-fade 1.5s linear infinite !important;
+            font-family: 'Poppins', sans-serif !important;
+            font-size: 14px !important;
+            font-weight: 500 !important;
+            color: var(--primary-color) !important;
+            border: none !important;
+            box-shadow: none !important;
+            width: auto !important;
+            height: auto !important;
+            position: relative !important;
+            display: block !important;
+        }
+
+        .vjs-loading-spinner::after {
+            display: none !important; /* දෙවන වරට පෙනෙන අකුරු ඉවත් කරන ලදි */
+        }
+
+        @keyframes vjs-spinner-fade {
+            0% { opacity: 0.2; }
+            50% { opacity: 1; }
+            100% { opacity: 0.2; }
         }
 
         .theme-toggle {
@@ -146,7 +186,6 @@
             font-weight: 500;
         }
 
-        /* Mobile Devices සදහා විශේෂ සැකසුම් */
         @media (max-width: 600px) {
             .channel-grid { grid-template-columns: repeat(2, 1fr); }
             .main-wrapper { padding: 10px; }
